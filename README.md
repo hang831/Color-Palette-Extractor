@@ -7,3 +7,5 @@ https://imagecolorpalette.netlify.app/
 
 
 ![sample3](https://github.com/user-attachments/assets/2fe06362-89d4-445e-a3b1-9f52bdd3b58b)
+
+Source:https://lokeshdhakar.com/projects/color-thief/#api
