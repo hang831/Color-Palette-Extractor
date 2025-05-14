@@ -3,8 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FREE!! Extractor de Paleta de Colores 圖像顏色調色板提取器  颜色调色板提取器 Farbpaletten-Extraktor Extrator de Paleta de Cores Экстрактор Цветовой Палитры カラーパレット抽出ツール 색상 팔레트 추출기 مستخرج لوحة الألوان">
+    <meta name="description" id="meta-description" content="Extract vibrant color palettes from images with our free, easy-to-use tool. Supports multiple languages and formats.">
     <title>Image Color Palette Extractor</title>
+    <!-- hreflang Tags for Multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://yourwebsite.com/?lang=en">
+    <link rel="alternate" hreflang="es" href="https://yourwebsite.com/?lang=es">
+    <link rel="alternate" hreflang="zh" href="https://yourwebsite.com/?lang=zh">
+    <link rel="alternate" hreflang="fr" href="https://yourwebsite.com/?lang=fr">
+    <link rel="alternate" hreflang="de" href="https://yourwebsite.com/?lang=de">
+    <link rel="alternate" hreflang="pt" href="https://yourwebsite.com/?lang=pt">
+    <link rel="alternate" hreflang="ru" href="https://yourwebsite.com/?lang=ru">
+    <link rel="alternate" hreflang="ja" href="https://yourwebsite.com/?lang=ja">
+    <link rel="alternate" hreflang="ko" href="https://yourwebsite.com/?lang=ko">
+    <link rel="alternate" hreflang="ar" href="https://yourwebsite.com/?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="https://yourwebsite.com/?lang=en">
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Color Palette Extractor",
+      "operatingSystem": "Web",
+      "applicationCategory": "DesignApplication",
+      "description": "A free tool to extract color palettes from images with support for 1-20 colors and multiple languages.",
+      "url": "https://yourwebsite.com",
+      "inLanguage": ["en", "es", "zh", "fr", "de", "pt", "ru", "ja", "ko", "ar"],
+      "alternateName": [
+        {"@language": "en", "@value": "Image Color Palette Extractor"},
+        {"@language": "es", "@value": "Extractor de Paleta de Colores"},
+        {"@language": "zh", "@value": "图像颜色调色板提取器"},
+        {"@language": "fr", "@value": "Extracteur de Palette de Couleurs"},
+        {"@language": "de", "@value": "Farbpaletten-Extraktor"},
+        {"@language": "pt", "@value": "Extrator de Paleta de Cores"},
+        {"@language": "ru", "@value": "Экстрактор Цветовой Палитры"},
+        {"@language": "ja", "@value": "カラーパレット抽出ツール"},
+        {"@language": "ko", "@value": "색상 팔레트 추출기"},
+        {"@language": "ar", "@value": "مستخرج لوحة الألوان"}
+      ]
+    }
+    </script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
@@ -69,9 +106,16 @@
         [dir="rtl"] .swatch {
             direction: ltr; /* Keep HEX codes LTR */
         }
+        /* Mobile adjustments */
+        @media (max-width: 576px) {
+            .swatch {
+                width: 100px;
+                height: 100px;
+                font-size: 14px;
+            }
+        }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813988403444765"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813988403444765" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation Bar with Language Selector -->
@@ -96,28 +140,41 @@
     <div class="container">
         <div class="card p-4">
             <h1 class="text-center mb-4" data-i18n="title">Color Palette Extractor</h1>
+            <h2 class="text-center mb-3" data-i18n="introHeading">Free Color Palette Extractor</h2>
+            <p class="text-center" data-i18n="intro">Extract vibrant color palettes from any image with our free tool. Perfect for designers and artists.</p>
             <div class="mb-3">
                 <p class="text-center" data-i18n="tryPrompt">Click a sample image below to try it out!</p>
                 <div class="d-flex flex-wrap justify-content-center">
-                    <img src="sample1.jpg" class="sample-img" alt="Sample 1" onclick="loadSample('sample1.jpg')">
-                    <img src="sample2.jpg" class="sample-img" alt="Sample 2" onclick="loadSample('sample2.jpg')">
-                    <img src="sample3.jpg" class="sample-img" alt="Sample 3" onclick="loadSample('sample3.jpg')">
-                    <img src="sample4.jpg" class="sample-img" alt="Sample 4" onclick="loadSample('sample4.jpg')">
-                    <img src="sample5.jpg" class="sample-img" alt="Sample 5" onclick="loadSample('sample5.jpg')">
+                    <img src="sample1.jpg" class="sample-img" alt="Sample image for color palette extraction" loading="lazy" onclick="loadSample('sample1.jpg')">
+                    <img src="sample2.jpg" class="sample-img" alt="Sample image for color palette extraction" loading="lazy" onclick="loadSample('sample2.jpg')">
+                    <img src="sample3.jpg" class="sample-img" alt="Sample image for color palette extraction" loading="lazy" onclick="loadSample('sample3.jpg')">
+                    <img src="sample4.jpg" class="sample-img" alt="Sample image for color palette extraction" loading="lazy" onclick="loadSample('sample4.jpg')">
+                    <img src="sample5.jpg" class="sample-img" alt="Sample image for color palette extraction" loading="lazy" onclick="loadSample('sample5.jpg')">
                 </div>
             </div>
             <div class="mb-3">
                 <input type="file" class="form-control" id="image-upload" accept="image/*">
             </div>
             <div class="mb-3">
-                <label for="color-count" class="form-label" data-i18n="colorCountLabel">Number of Colors (1-10):</label>
-                <input type="number" class="form-control" id="color-count" min="1" max="10" value="5">
+                <label for="color-count" class="form-label" data-i18n="colorCountLabel">Number of Colors (1-20):</label>
+                <input type="number" class="form-control" id="color-count" min="1" max="20" value="5">
             </div>
             <div class="text-center mb-3">
-                <img id="preview" class="img-fluid" alt="Image Preview">
+                <img id="preview" class="img-fluid" alt="Uploaded image for color palette extraction">
             </div>
             <button class="btn btn-primary w-100 mb-3" onclick="extractColors()" data-i18n="extractButton">Extract Palette</button>
             <div class="row justify-content-center" id="palette"></div>
+            <div class="mt-3 text-center">
+                <p data-i18n="sharePrompt">Share your palette:</p>
+                <a id="twitter-share" href="#" target="_blank" class="btn btn-primary">Share on Twitter</a>
+            </div>
+            <div class="mt-4">
+                <h2 data-i18n="faqHeading">Frequently Asked Questions</h2>
+                <h3 data-i18n="faqQuestion1">How do I extract colors from an image?</h3>
+                <p data-i18n="faqAnswer1">Upload your image, select the number of colors (1-20), and click "Extract Palette" to get HEX codes instantly.</p>
+                <h3 data-i18n="faqQuestion2">Is this color palette tool free?</h3>
+                <p data-i18n="faqAnswer2">Yes, our tool is completely free and supports multiple languages for global users.</p>
+            </div>
         </div>
 
         <!-- Ad Banner Placement -->
@@ -125,13 +182,13 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="sample3.png" class="d-block w-100" alt="sample">
+                    <img src="sample3.png" class="d-block w-100" alt="Carousel sample image" loading="lazy">
                 </div>
                 <div class="carousel-item">
-                    <img src="sample2.png" class="d-block w-100" alt="sample">
+                    <img src="sample2.png" class="d-block w-100" alt="Carousel sample image" loading="lazy">
                 </div>
                 <div class="carousel-item">
-                    <img src="sample1.png" class="d-block w-100" alt="sample">
+                    <img src="sample1.png" class="d-block w-100" alt="Carousel sample image" loading="lazy">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -184,74 +241,164 @@
         // Translation dictionary
         const translations = {
             en: {
-                title: "Color Palette Extractor",
+                title: "Free Image Color Palette Extractor Tool",
                 extractButton: "Extract Palette",
-                colorCountLabel: "Number of Colors (1-10):",
+                colorCountLabel: "Number of Colors (1-20):",
                 tryPrompt: "Click a sample image below to try it out!",
-                uploadPrompt: "Please upload an image first!"
+                uploadPrompt: "Please upload an image first!",
+                metaDescription: "Extract vibrant color palettes from images with our free, easy-to-use tool. Supports multiple languages and formats.",
+                introHeading: "Free Color Palette Extractor",
+                intro: "Extract vibrant color palettes from any image with our free tool. Perfect for designers and artists.",
+                sharePrompt: "Share your palette:",
+                faqHeading: "Frequently Asked Questions",
+                faqQuestion1: "How do I extract colors from an image?",
+                faqAnswer1: "Upload your image, select the number of colors (1-20), and click 'Extract Palette' to get HEX codes instantly.",
+                faqQuestion2: "Is this color palette tool free?",
+                faqAnswer2: "Yes, our tool is completely free and supports multiple languages for global users."
             },
             es: {
-                title: "Extractor de Paleta de Colores",
+                title: "Herramienta Gratuita para Extraer Paletas de Colores",
                 extractButton: "Extraer Paleta",
-                colorCountLabel: "Número de Colores (1-10):",
+                colorCountLabel: "Número de Colores (1-20):",
                 tryPrompt: "¡Haz clic en una imagen de muestra abajo para probar!",
-                uploadPrompt: "¡Por favor, sube una imagen primero!"
+                uploadPrompt: "¡Por favor, sube una imagen primero!",
+                metaDescription: "Extrae paletas de colores vibrantes de imágenes con nuestra herramienta gratuita y fácil de usar. Soporta múltiples idiomas y formatos.",
+                introHeading: "Extractor de Paleta de Colores Gratuito",
+                intro: "Extrae paletas de colores vibrantes de cualquier imagen con nuestra herramienta gratuita. Ideal para diseñadores y artistas.",
+                sharePrompt: "Comparte tu paleta:",
+                faqHeading: "Preguntas Frecuentes",
+                faqQuestion1: "¿Cómo extraigo colores de una imagen?",
+                faqAnswer1: "Sube tu imagen, selecciona el número de colores (1-20) y haz clic en 'Extraer Paleta' para obtener códigos HEX al instante.",
+                faqQuestion2: "¿Es gratuita esta herramienta de paleta de colores?",
+                faqAnswer2: "Sí, nuestra herramienta es completamente gratuita y soporta múltiples idiomas para usuarios globales."
             },
             zh: {
-                title: "颜色调色板提取器",
+                title: "免费图像颜色调色板提取工具",
                 extractButton: "提取调色板",
-                colorCountLabel: "颜色数量 (1-10)：",
+                colorCountLabel: "颜色数量 (1-20)：",
                 tryPrompt: "点击下面的样本图片试试看！",
-                uploadPrompt: "请先上传一张图片！"
+                uploadPrompt: "请先上传一张图片！",
+                metaDescription: "使用我们免费且易用的工具从图像中提取鲜艳的颜色调色板。支持多种语言和格式。",
+                introHeading: "免费颜色调色板提取器",
+                intro: "使用我们的免费工具从任何图像中提取鲜艳的颜色调色板。适合设计师和艺术家。",
+                sharePrompt: "分享你的调色板：",
+                faqHeading: "常见问题",
+                faqQuestion1: "如何从图像中提取颜色？",
+                faqAnswer1: "上传你的图像，选择颜色数量（1-20），然后点击“提取调色板”即可立即获取HEX代码。",
+                faqQuestion2: "这个颜色调色板工具是免费的吗？",
+                faqAnswer2: "是的，我们的工具完全免费，并支持多种语言以服务全球用户。"
             },
             fr: {
-                title: "Extracteur de Palette de Couleurs",
+                title: "Outil Gratuit d'Extraction de Palette de Couleurs",
                 extractButton: "Extraire la Palette",
-                colorCountLabel: "Nombre de Couleurs (1-10) :",
+                colorCountLabel: "Nombre de Couleurs (1-20) :",
                 tryPrompt: "Cliquez sur une image d'exemple ci-dessous pour essayer !",
-                uploadPrompt: "Veuillez d'abord télécharger une image !"
+                uploadPrompt: "Veuillez d'abord télécharger une image !",
+                metaDescription: "Extrayez des palettes de couleurs vibrantes à partir d'images avec notre outil gratuit et facile à utiliser. Prend en charge plusieurs langues et formats.",
+                introHeading: "Extracteur de Palette de Couleurs Gratuit",
+                intro: "Extrayez des palettes de couleurs vibrantes à partir de n'importe quelle image avec notre outil gratuit. Parfait pour les designers et artistes.",
+                sharePrompt: "Partagez votre palette :",
+                faqHeading: "Questions Fréquentes",
+                faqQuestion1: "Comment extraire des couleurs d'une image ?",
+                faqAnswer1: "Téléchargez votre image, sélectionnez le nombre de couleurs (1-20) et cliquez sur 'Extraire la Palette' pour obtenir les codes HEX instantanément.",
+                faqQuestion2: "Cet outil de palette de couleurs est-il gratuit ?",
+                faqAnswer2: "Oui, notre outil est entièrement gratuit et prend en charge plusieurs langues pour les utilisateurs du monde entier."
             },
             de: {
-                title: "Farbpaletten-Extraktor",
+                title: "Kostenloses Farbpaletten-Extraktor-Tool",
                 extractButton: "Palette Extrahieren",
-                colorCountLabel: "Anzahl der Farben (1-10):",
+                colorCountLabel: "Anzahl der Farben (1-20):",
                 tryPrompt: "Klicken Sie unten auf ein Beispielbild, um es auszuprobieren!",
-                uploadPrompt: "Bitte laden Sie zuerst ein Bild hoch!"
+                uploadPrompt: "Bitte laden Sie zuerst ein Bild hoch!",
+                metaDescription: "Extrahieren Sie lebendige Farbpaletten aus Bildern mit unserem kostenlosen, benutzerfreundlichen Tool. Unterstützt mehrere Sprachen und Formate.",
+                introHeading: "Kostenloser Farbpaletten-Extraktor",
+                intro: "Extrahieren Sie lebendige Farbpaletten aus jedem Bild mit unserem kostenlosen Tool. Ideal für Designer und Künstler.",
+                sharePrompt: "Teile deine Palette:",
+                faqHeading: "Häufig Gestellte Fragen",
+                faqQuestion1: "Wie extrahiere ich Farben aus einem Bild?",
+                faqAnswer1: "Laden Sie Ihr Bild hoch, wählen Sie die Anzahl der Farben (1-20) und klicken Sie auf 'Palette Extrahieren', um sofort HEX-Codes zu erhalten.",
+                faqQuestion2: "Ist dieses Farbpaletten-Tool kostenlos?",
+                faqAnswer2: "Ja, unser Tool ist völlig kostenlos und unterstützt mehrere Sprachen für globale Nutzer."
             },
             pt: {
-                title: "Extrator de Paleta de Cores",
+                title: "Ferramenta Gratuita de Extração de Paleta de Cores",
                 extractButton: "Extrair Paleta",
-                colorCountLabel: "Número de Cores (1-10):",
+                colorCountLabel: "Número de Cores (1-20):",
                 tryPrompt: "Clique em uma imagem de amostra abaixo para experimentar!",
-                uploadPrompt: "Por favor, faça upload de uma imagem primeiro!"
+                uploadPrompt: "Por favor, faça upload de uma imagem primeiro!",
+                metaDescription: "Extraia paletas de cores vibrantes de imagens com nossa ferramenta gratuita e fácil de usar. Suporta vários idiomas e formatos.",
+                introHeading: "Extrator de Paleta de Cores Gratuito",
+                intro: "Extraia paletas de cores vibrantes de qualquer imagem com nossa ferramenta gratuita. Perfeita para designers e artistas.",
+                sharePrompt: "Compartilhe sua paleta:",
+                faqHeading: "Perguntas Frequentes",
+                faqQuestion1: "Como extraio cores de uma imagem?",
+                faqAnswer1: "Faça upload da sua imagem, selecione o número de cores (1-20) e clique em 'Extrair Paleta' para obter códigos HEX instantaneamente.",
+                faqQuestion2: "Esta ferramenta de paleta de cores é gratuita?",
+                faqAnswer2: "Sim, nossa ferramenta é totalmente gratuita e suporta vários idiomas para usuários globais."
             },
             ru: {
-                title: "Экстрактор Цветовой Палитры",
+                title: "Бесплатный Инструмент для Извлечения Цветовых Палитр",
                 extractButton: "Извлечь Палитру",
-                colorCountLabel: "Количество цветов (1-10):",
+                colorCountLabel: "Количество цветов (1-20):",
                 tryPrompt: "Нажмите на образец изображения ниже, чтобы попробовать!",
-                uploadPrompt: "Пожалуйста, сначала загрузите изображение!"
+                uploadPrompt: "Пожалуйста, сначала загрузите изображение!",
+                metaDescription: "Извлекайте яркие цветовые палитры из изображений с помощью нашего бесплатного и удобного инструмента. Поддерживает несколько языков и форматов.",
+                introHeading: "Бесплатный Экстрактор Цветовых Палитр",
+                intro: "Извлекайте яркие цветовые палитры из любого изображения с помощью нашего бесплатного инструмента. Идеально для дизайнеров и художников.",
+                sharePrompt: "Поделитесь своей палитрой:",
+                faqHeading: "Часто Задаваемые Вопросы",
+                faqQuestion1: "Как извлечь цвета из изображения?",
+                faqAnswer1: "Загрузите изображение, выберите количество цветов (1-20) и нажмите 'Извлечь Палитру', чтобы мгновенно получить HEX-коды.",
+                faqQuestion2: "Этот инструмент для цветовых палитр бесплатный?",
+                faqAnswer2: "Да, наш инструмент полностью бесплатный и поддерживает несколько языков для пользователей по всему миру."
             },
             ja: {
-                title: "カラーパレット抽出ツール",
+                title: "無料画像カラーパレット抽出ツール",
                 extractButton: "パレットを抽出",
-                colorCountLabel: "色の数 (1-10)：",
+                colorCountLabel: "色の数 (1-20)：",
                 tryPrompt: "以下のサンプル画像をクリックして試してください！",
-                uploadPrompt: "まず画像をアップロードしてください！"
+                uploadPrompt: "まず画像をアップロードしてください！",
+                metaDescription: "無料で使いやすいツールで画像から鮮やかなカラーパレットを抽出。複数の言語と形式をサポート。",
+                introHeading: "無料カラーパレット抽出ツール",
+                intro: "無料ツールで任意の画像から鮮やかなカラーパレットを抽出。デザイナーやアーティストに最適。",
+                sharePrompt: "パレットを共有：",
+                faqHeading: "よくある質問",
+                faqQuestion1: "画像から色を抽出するにはどうすればいいですか？",
+                faqAnswer1: "画像をアップロードし、色の数（1-20）を選択して、「パレットを抽出」をクリックすると、すぐにHEXコードが取得できます。",
+                faqQuestion2: "このカラーパレットツールは無料ですか？",
+                faqAnswer2: "はい、私たちのツールは完全に無料で、グローバルユーザー向けに複数の言語をサポートしています。"
             },
             ko: {
-                title: "색상 팔레트 추출기",
+                title: "무료 이미지 색상 팔레트 추출 도구",
                 extractButton: "팔레트 추출",
-                colorCountLabel: "색상 수 (1-10):",
+                colorCountLabel: "색상 수 (1-20):",
                 tryPrompt: "아래 샘플 이미지를 클릭하여 사용해 보세요!",
-                uploadPrompt: "먼저 이미지를 업로드하세요!"
+                uploadPrompt: "먼저 이미지를 업로드하세요!",
+                metaDescription: "무료이고 사용하기 쉬운 도구로 이미지에서 생생한 색상 팔레트를 추출하세요. 여러 언어와 형식을 지원합니다.",
+                introHeading: "무료 색상 팔레트 추출기",
+                intro: "무료 도구로 모든 이미지에서 생생한 색상 팔레트를 추출하세요. 디자이너와 아티스트에게 완벽합니다。",
+                sharePrompt: "팔레트 공유:",
+                faqHeading: "자주 묻는 질문",
+                faqQuestion1: "이미지에서 색상을 추출하려면 어떻게 해야 하나요?",
+                faqAnswer1: "이미지를 업로드하고, 색상 수(1-20)를 선택한 후 '팔레트 추출'을 클릭하면 즉시 HEX 코드를 얻을 수 있습니다.",
+                faqQuestion2: "이 색상 팔레트 도구는 무료인가요?",
+                faqAnswer2: "네, 저희 도구는 완전히 무료이며 전 세계 사용자를 위해 여러 언어를 지원합니다."
             },
             ar: {
-                title: "مستخرج لوحة الألوان",
+                title: "أداة مجانية لاستخراج لوحة الألوان من الصور",
                 extractButton: "استخراج اللوحة",
-                colorCountLabel: "عدد الألوان (1-10):",
+                colorCountLabel: "عدد الألوان (1-20):",
                 tryPrompt: "انقر على صورة عينة أدناه للتجربة!",
-                uploadPrompt: "يرجى تحميل صورة أولاً!"
+                uploadPrompt: "يرجى تحميل صورة أولاً!",
+                metaDescription: "استخرج لوحات ألوان نابضة بالحياة من الصور باستخدام أداتنا المجانية وسهلة الاستخدام. تدعم لغات وصيغ متعددة.",
+                introHeading: "مستخرج لوحة الألوان المجاني",
+                intro: "استخرج لوحات ألوان نابضة بالحياة من أي صورة باستخدام أداتنا المجانية. مثالية للمصممين والفنانين.",
+                sharePrompt: "شارك لوحتك:",
+                faqHeading: "الأسئلة الشائعة",
+                faqQuestion1: "كيف أستخرج الألوان من صورة؟",
+                faqAnswer1: "قم بتحميل صورتك، وحدد عدد الألوان (1-20)، وانقر على 'استخراج اللوحة' للحصول على رموز HEX على الفور.",
+                faqQuestion2: "هل أداة لوحة الألوان هذه مجانية؟",
+                faqAnswer2: "نعم، أداتنا مجانية تمامًا وتدعم لغات متعددة للمستخدمين العالميين."
             }
         };
 
@@ -262,17 +409,40 @@
                 element.textContent = translations[lang][key];
             });
             document.title = translations[lang].title;
+            document.getElementById('meta-description').setAttribute('content', translations[lang].metaDescription);
             document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
         }
 
         // Language selector event listener
         const langSelect = document.getElementById('language-select');
         langSelect.addEventListener('change', () => {
-            updateLanguage(langSelect.value);
+            const lang = langSelect.value;
+            updateLanguage(lang);
+            // Only use pushState if not in a srcdoc or invalid context
+            if (window.location.protocol !== 'about:' && window.location.href !== 'about:srcdoc') {
+                try {
+                    window.history.pushState({}, '', `?lang=${lang}`);
+                } catch (e) {
+                    console.warn('pushState failed:', e.message);
+                }
+            }
+            updateShareLink();
         });
 
-        // Initialize with English
-        updateLanguage('en');
+        // Check for lang query parameter on load
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialLang = urlParams.get('lang') || 'en';
+        langSelect.value = initialLang;
+        updateLanguage(initialLang);
+
+        // Update share link
+        function updateShareLink() {
+            const lang = langSelect.value;
+            const shareUrl = `https://yourwebsite.com/?lang=${lang}`;
+            const twitterShare = document.getElementById('twitter-share');
+            twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(translations[lang].sharePrompt)}&url=${encodeURIComponent(shareUrl)}`;
+        }
+        updateShareLink();
 
         // Color extraction logic
         const uploadInput = document.getElementById('image-upload');
@@ -306,10 +476,18 @@
             const img = preview;
             img.crossOrigin = "Anonymous";
             let colorCount = parseInt(colorCountInput.value);
-            if (isNaN(colorCount) || colorCount < 1 || colorCount > 10) {
+            if (isNaN(colorCount) || colorCount < 1 || colorCount > 20) {
                 colorCount = 5; // Fallback to default if invalid
             }
-            const colors = colorThief.getPalette(img, colorCount);
+            let colors;
+            if (colorCount === 1) {
+                // Use getColor for a single color
+                const color = colorThief.getColor(img);
+                colors = [color]; // Wrap in array for consistent processing
+            } else {
+                // Use getPalette for 2 or more colors
+                colors = colorThief.getPalette(img, colorCount);
+            }
             paletteDiv.innerHTML = '';
             colors.forEach(color => {
                 const hex = rgbToHex(color[0], color[1], color[2]);
