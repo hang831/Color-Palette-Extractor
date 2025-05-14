@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[FREE!!] Extractor de Paleta de Colores 圖像顏色調色板提取器  颜色调色板提取器 Farbpaletten-Extraktor Extrator de Paleta de Cores Экстрактор Цветовой Палитры カラーパレット抽出ツール 색상 팔레트 추출기 مستخرج لوحة الألوان">
+    <meta name="description" content="FREE!! Extractor de Paleta de Colores 圖像顏色調色板提取器  颜色调色板提取器 Farbpaletten-Extraktor Extrator de Paleta de Cores Экстрактор Цветовой Палитры カラーパレット抽出ツール 색상 팔레트 추출기 مستخرج لوحة الألوان">
     <title>Image Color Palette Extractor</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -47,6 +47,17 @@
         .navbar {
             margin-bottom: 20px;
         }
+        .sample-img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .sample-img:hover {
+            opacity: 0.8;
+        }
         /* RTL support for Arabic */
         [dir="rtl"] .navbar-brand {
             margin-left: auto;
@@ -85,6 +96,16 @@
     <div class="container">
         <div class="card p-4">
             <h1 class="text-center mb-4" data-i18n="title">Color Palette Extractor</h1>
+            <div class="mb-3">
+                <p class="text-center" data-i18n="tryPrompt">Click a sample image below to try it out!</p>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <img src="sample1.jpg" class="sample-img" alt="Sample 1" onclick="loadSample('sample1.jpg')">
+                    <img src="sample2.jpg" class="sample-img" alt="Sample 2" onclick="loadSample('sample2.jpg')">
+                    <img src="sample3.jpg" class="sample-img" alt="Sample 3" onclick="loadSample('sample3.jpg')">
+                    <img src="sample4.jpg" class="sample-img" alt="Sample 4" onclick="loadSample('sample4.jpg')">
+                    <img src="sample5.jpg" class="sample-img" alt="Sample 5" onclick="loadSample('sample5.jpg')">
+                </div>
+            </div>
             <div class="mb-3">
                 <input type="file" class="form-control" id="image-upload" accept="image/*">
             </div>
@@ -166,60 +187,70 @@
                 title: "Color Palette Extractor",
                 extractButton: "Extract Palette",
                 colorCountLabel: "Number of Colors (1-10):",
+                tryPrompt: "Click a sample image below to try it out!",
                 uploadPrompt: "Please upload an image first!"
             },
             es: {
                 title: "Extractor de Paleta de Colores",
                 extractButton: "Extraer Paleta",
                 colorCountLabel: "Número de Colores (1-10):",
+                tryPrompt: "¡Haz clic en una imagen de muestra abajo para probar!",
                 uploadPrompt: "¡Por favor, sube una imagen primero!"
             },
             zh: {
                 title: "颜色调色板提取器",
                 extractButton: "提取调色板",
                 colorCountLabel: "颜色数量 (1-10)：",
+                tryPrompt: "点击下面的样本图片试试看！",
                 uploadPrompt: "请先上传一张图片！"
             },
             fr: {
                 title: "Extracteur de Palette de Couleurs",
                 extractButton: "Extraire la Palette",
                 colorCountLabel: "Nombre de Couleurs (1-10) :",
+                tryPrompt: "Cliquez sur une image d'exemple ci-dessous pour essayer !",
                 uploadPrompt: "Veuillez d'abord télécharger une image !"
             },
             de: {
                 title: "Farbpaletten-Extraktor",
                 extractButton: "Palette Extrahieren",
                 colorCountLabel: "Anzahl der Farben (1-10):",
+                tryPrompt: "Klicken Sie unten auf ein Beispielbild, um es auszuprobieren!",
                 uploadPrompt: "Bitte laden Sie zuerst ein Bild hoch!"
             },
             pt: {
                 title: "Extrator de Paleta de Cores",
                 extractButton: "Extrair Paleta",
                 colorCountLabel: "Número de Cores (1-10):",
+                tryPrompt: "Clique em uma imagem de amostra abaixo para experimentar!",
                 uploadPrompt: "Por favor, faça upload de uma imagem primeiro!"
             },
             ru: {
                 title: "Экстрактор Цветовой Палитры",
                 extractButton: "Извлечь Палитру",
                 colorCountLabel: "Количество цветов (1-10):",
+                tryPrompt: "Нажмите на образец изображения ниже, чтобы попробовать!",
                 uploadPrompt: "Пожалуйста, сначала загрузите изображение!"
             },
             ja: {
                 title: "カラーパレット抽出ツール",
                 extractButton: "パレットを抽出",
                 colorCountLabel: "色の数 (1-10)：",
+                tryPrompt: "以下のサンプル画像をクリックして試してください！",
                 uploadPrompt: "まず画像をアップロードしてください！"
             },
             ko: {
                 title: "색상 팔레트 추출기",
                 extractButton: "팔레트 추출",
                 colorCountLabel: "색상 수 (1-10):",
+                tryPrompt: "아래 샘플 이미지를 클릭하여 사용해 보세요!",
                 uploadPrompt: "먼저 이미지를 업로드하세요!"
             },
             ar: {
                 title: "مستخرج لوحة الألوان",
                 extractButton: "استخراج اللوحة",
                 colorCountLabel: "عدد الألوان (1-10):",
+                tryPrompt: "انقر على صورة عينة أدناه للتجربة!",
                 uploadPrompt: "يرجى تحميل صورة أولاً!"
             }
         };
@@ -261,6 +292,11 @@
                 reader.readAsDataURL(file);
             }
         });
+
+        function loadSample(imagePath) {
+            preview.src = imagePath;
+            paletteDiv.innerHTML = ''; // Clear previous palette
+        }
 
         function extractColors() {
             if (!preview.src) {
